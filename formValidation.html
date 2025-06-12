@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form validation</title>
+    <style>
+        button {
+            font-size: x-large;
+        }
+        button:hover {
+            background-color: rgb(59, 175, 59);
+            box-shadow: 2px 2px 2px 2px;
+        }
+    </style>
+  </head>
+  <body>
+        <form action="">
+           <fieldset style="display: inline-block; margin: 40%; margin-top: 10%;" >
+            <legend align="center"><b>Login Form</b></legend>
+                <label for="">First Name:</label>
+                <input type="text" id="Fname" placeholder="First name"><br>
+                <span style="color: red;" id="fnameerror"></span><br>
+                <label for="">Last Name:</label>
+                <input type="text" id="Lname" placeholder="Second name"><br>
+                <span style="color: red;" id="lnameerror"></span><br>
+                <label for="">Password:</label>
+                <input type="password" id="pass" placeholder="Password"><br>
+                <span style="color: red;" id="passerror"></span><br>
+                <label for="">phone number:</label>
+                <input type="number" id="ph" placeholder="Enter the phone name"><br>
+                <span style="color: red;" id="pherror"></span><br>
+                <label for="">Email id:</label>
+                <input type="email" id="em" placeholder="Email"><br>
+                <span style="color: red;" id="emerror"></span><br>
+                <label for="">Gender:</label><br><br>
+                <input type="radio" name="t">Male
+                <input type="radio" name="t">Femail
+                <input type="radio" name="t">Other <br><br>
+                <label for="">Address</label><br>
+                <textarea placeholder="Enter the address"></textarea><br><br><br>
+                <center>
+                <button onclick="valid()">Register</button>
+                    </center>
+           </fieldset> 
+        </form>
+  </body>
+  <script>
+    function valid() {
+        let isValid=true;
+        let name=document.getElementById("Fname").value.trim();
+        let email=document.getElementById("em").value.trim();
+        let password=document.getElementById("pass").value.trim();
+        let phone=document.getElementById("ph").value.trim();
+
+        if(name === "") {
+            document.getElementById("fnameerror").innerHTML="Name is require";
+            isValid=false;
+        }
+        if(password.length < 8) {
+            document.getElementById("passerror").innerHTML="Length should be above 8";
+            isValid=false;
+        }
+    }
+  </script>
+</html>
